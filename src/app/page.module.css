@@ -3,8 +3,62 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 4rem;
   min-height: 100vh;
+}
+
+.nav {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 0;
+}
+
+.navUl {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 600px;
+}
+
+.buttonCenter {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 220px;
+}
+
+.button {
+  display: flex;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: rgb(18, 147, 179);
+  color: white;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.input {
+  margin: 0.5rem;
+  outline: none;
 }
 
 .description {
@@ -97,7 +151,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
