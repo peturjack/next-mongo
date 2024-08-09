@@ -40,17 +40,22 @@ async function run() {
 }
 export default async function Back() {
   const baseUrl = process.env.HOST;
-  const response = await fetch(`${baseUrl}/api`);
-  const books: book[] = await response.json();
-  return (
-    <>
-      {books.map((booksObj) => (
-        <div>
-          <h1 key={booksObj._id.toString()}>{booksObj.author}</h1>
-          <p>{booksObj.title}</p>
-          <p>{booksObj.genres}</p>
-        </div>
-      ))}
-    </>
-  );
+  try {
+    const response = await fetch(`${baseUrl}/api`);
+    const books: book[] = await response.json();
+    return (
+      <>
+        {books.map((booksObj) => (
+          <div>
+            <h1 key={booksObj._id.toString()}>{booksObj.author}</h1>
+            <p>{booksObj.title}</p>
+            <p>{booksObj.genres}</p>
+          </div>
+        ))}
+      </>
+    );
+  } catch (error) {
+    console.error("Cant render this stuff");
+    return <div>Cant render this stuff</div>;
+  }
 }
