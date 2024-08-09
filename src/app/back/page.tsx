@@ -20,18 +20,23 @@ export default async function Back() {
   const response = await fetch(`${test}/api`, {
     cache: "no-store",
   });
-  const titleBooks: Books[] = await response.json();
-  return (
-    <>
-      {titleBooks.map((BooksObj) => (
-        <EditBooks
-          key={BooksObj._id.toString()}
-          booksObj={BooksObj}
-        ></EditBooks>
-      ))}
-      <Link href={"/front"}>
-        <button>Frontpage</button>
-      </Link>
-    </>
-  );
+  try {
+    const titleBooks: Books[] = await response.json();
+    return (
+      <>
+        {titleBooks.map((BooksObj) => (
+          <EditBooks
+            key={BooksObj._id.toString()}
+            booksObj={BooksObj}
+          ></EditBooks>
+        ))}
+        <Link href={"/front"}>
+          <button>Frontpage</button>
+        </Link>
+      </>
+    );
+  } catch (error) {
+    console.error("Cant render books");
+    return <div>Cant render books</div>;
+  }
 }
