@@ -3,10 +3,13 @@ import { ObjectId } from 'mongodb';
 import { book } from '@/utils/types';
 
 export async function GET(request: Request) {
+  console.log("hello")
   const client = await connect
-  const cursor = await client.db("bookstore").collection("books").find();
+  const cursor = client.db("bookstore").collection("books").find();
   const greetings = await cursor.toArray()
+  
   return Response.json(greetings)
+  
 }
 
 export async function POST(request: Request){
