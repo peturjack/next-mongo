@@ -39,7 +39,7 @@ async function run() {
   }
 }
 export default async function Back() {
-  const baseUrl = "http://localhost:3000";
+  const baseUrl = process.env.HOST;
   const response = await fetch(`${baseUrl}/api`);
   const books: book[] = await response.json();
   return (
