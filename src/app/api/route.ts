@@ -3,7 +3,6 @@ import { ObjectId } from 'mongodb';
 import { book } from '@/utils/types';
 //Get request baby
 export async function GET(request: Request) {
-  console.log("hello")
   const client = await connect
   const cursor = client.db("bookstore").collection("books").find();
   const greetings = await cursor.toArray()
