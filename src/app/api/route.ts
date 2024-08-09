@@ -11,7 +11,7 @@ export async function GET(request: Request) {
   return Response.json(greetings)
   
 }
-
+//post baby
 export async function POST(request: Request){
   const client = await connect;
   const body = await request.json()
