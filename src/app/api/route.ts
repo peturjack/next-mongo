@@ -18,7 +18,7 @@ export async function POST(request: Request){
   await client.db("bookstore").collection("books").insertOne({title: body.books, author: body.author, pages: body.pages, rating: body.rating});
   return Response.json({message: "successfully added to the document"})
 }
-
+//update stuff
 export async function PUT(request: Request){
   const client = await connect;
   const body = await request.json()
