@@ -15,7 +15,7 @@ type Books = {
 };
 
 export default async function Back() {
-  const response = await fetch("http://localhost:3000/api", {
+  const response = await fetch(`${process.env.HOST}/api`, {
     cache: "no-store",
   });
   const titleBooks: Books[] = await response.json();
