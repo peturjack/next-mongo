@@ -26,7 +26,7 @@ export async function PUT(request: Request){
   await client.db("bookstore").collection("books").updateOne({_id: id}, {$set: {rating: body.rating}})
   return Response.json({message: "successfully updated the document"})
 }
-
+//delete stuff
 export async function DELETE(request: Request) {
   const client = await connect;
   const body = await request.json()
