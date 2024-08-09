@@ -1,7 +1,7 @@
 import connect from '@/utils/startMongo'
 import { ObjectId } from 'mongodb';
 import { book } from '@/utils/types';
-
+//Get request baby
 export async function GET(request: Request) {
   console.log("hello")
   const client = await connect
